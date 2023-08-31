@@ -2,43 +2,69 @@
   box-sizing: border-box;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: normal;
-  
 }
-
 
 body {
   background: linear-gradient(to right, #746cdd,rgb(96, 96, 194),rgb(216, 61, 216), rgb(226, 142, 226));
-  }
-
-H1{
-  
- font-size: 300%;
- font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 100%;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px; 
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.grid-item {
+  border: none;
+  padding: 2px;
+  align-items: center;
+}
+.page-title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 50px;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   
+}
+
+.grid-item:nth-child(1) {
+  justify-self: end; /* Right align */
+}
+
+.grid-item:nth-child(2) {
+  justify-self: center; /* Center align */
+}
+
+.grid-item:nth-child(3) {
+  justify-self: start; /* Left align */
+}
+
+.grid-item .gif{
+  margin: 0px 0px 0px 0px;
+}
+
+.grid-item .gif2{
+  margin: 0px 0px 0px 0px;
+}
+
 .calculator-grid {
   
   display: grid;
- 
+  margin: 0.1px;
   min-height: 100%;
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: minmax(140px, auto) repeat(5, 80px);
   
 }
-.gif{
-  margin-top: 20%;
-  margin-left: 60%;
-  rotate: 20deg;
-}
-
-.gif2{
-  margin-top: -30%;
-  margin-left: 10%;
-}
-
 
 .calculator-grid > button {
   border-radius: 4px;
-  cursor:grab;
+  cursor: pointer;
   font-size: 2rem;
   border: 1px solid black;
   outline: none;
@@ -54,29 +80,60 @@ H1{
   grid-column: span 2;
 }
 
-.output{
-  
+.output {
   border-radius: 2%;
   grid-column: 1 / -1;
-  background-color:black;
+  background-color: black;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
   flex-direction: column;
-  padding: 10%;
+  padding: 10px;
   word-wrap: break-word;
   word-break: break-all;
-  border:0.3pc white;
-  border-style: double;
-  
+  border: 0.3pc white double;
+  min-height: 80px;
+  overflow: hidden; /* Hide overflow to prevent crossing the border */
+}
+
+.output .previous-operand,
+.output .current-operand {
+  overflow: hidden; /* Hide overflow of operands */
+  white-space: nowrap; /* Prevent line breaks in operands */
+  text-overflow: ellipsis; /* Show ellipsis (...) for truncated text */
 }
 
 .output .previous-operand {
-  color: rgba(255, 255, 255, .75);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 1.5rem;
 }
 
 .output .current-operand {
   color: white;
   font-size: 2.5rem;
+}
+
+
+@media screen and (max-width: 660px) {
+  .grid-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-title {
+    text-align: center;
+    margin: 20px 0; /* Adjust the margin as needed */
+  }
+
+  .grid-item .gif,
+  .grid-item .gif2 {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .calculator-grid {
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 60px);
+  }
+
 }
