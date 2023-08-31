@@ -135,7 +135,7 @@ body {
   }
   .calculator-grid {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: minmax(100px, auto) repeat(5, 70px);
+    grid-template-rows: minmax(95px, auto) repeat(5, 50px);
     gap: 0px;
   }
 
@@ -153,4 +153,5 @@ body {
   .page-title{
     font-size: 50px;
   }
+
 }
