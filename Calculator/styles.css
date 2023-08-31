@@ -133,5 +133,24 @@ body {
    padding: 0;
   
   }
+  .calculator-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(100px, auto) repeat(5, 70px);
+    gap: 0.1px;
+  }
 
+  .calculator-grid > button {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
+
+  .output {
+    padding: 5px;
+    min-height: 60px;
+    font-size: 2px;
+  }
+
+  .page-title{
+    font-size: 60px;
+  }
 }
