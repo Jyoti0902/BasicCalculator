@@ -45,11 +45,11 @@ body {
 }
 
 .grid-item .gif{
-  margin: 0px 0px 0px 0px;
+  margin: 0px;
 }
 
 .grid-item .gif2{
-  margin: 0px 0px 0px 0px;
+  margin: 0px;
 }
 
 .calculator-grid {
@@ -136,21 +136,21 @@ body {
   .calculator-grid {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: minmax(100px, auto) repeat(5, 70px);
-    gap: 0.1px;
+    gap: 0px;
   }
 
   .calculator-grid > button {
     font-size: 1.5rem;
-    padding: 5px;
+    padding: 4px;
   }
 
   .output {
     padding: 5px;
     min-height: 60px;
-    font-size: 2px;
+    font-size: 0.5px;
   }
 
   .page-title{
-    font-size: 60px;
+    font-size: 50px;
   }
 }
